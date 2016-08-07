@@ -1,27 +1,22 @@
-require 'dotenv'
 require 'sinatra/base'
 require 'sinatra/activerecord'
 
-# Load environment variables
-Dotenv.load
-
-# Application files
-require './routes/verification_codes'
-
 class IBuyFoodApp < Sinatra::Base
 
-  register Sinatra::ActiveRecordExtension
-
   configure :development, :test do
+    # Load environment variables
+    require 'dotenv'
+    Dotenv.load
     # Listen on all interfaces
-    set :bind, '0.0.0.0' unless Sinatra::Base.production?
+    set :bind, '0.0.0.0'
   end
 
-  configure :production, :test, :development do
-    # Load database configuration
-    set :database_file, 'config/database.yml'
-  end
+  # Load database configuration
+  register Sinatra::ActiveRecordExtension
+  set :database_file, 'config/database.yml'
 
+  # Application files
+  require './routes/verification_codes'
   register Sinatra::IBuyFoodApp::Routes::VerificationCodes
 
   # Start the server if ruby file executed directly

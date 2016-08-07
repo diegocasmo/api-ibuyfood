@@ -15,9 +15,4 @@ test:
   password: <%= ENV['DB_TEST_PASSWORD'] %>
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: <%= ENV['DB_PROD_NAME'] %>
-  pool: 5
-  username: <%= ENV['DB_PROD_USERNAME'] %>
-  password: <%= ENV['DB_PROD_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
