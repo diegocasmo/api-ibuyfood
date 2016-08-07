@@ -19,6 +19,6 @@ class IBuyFoodApp < Sinatra::Base
   require './routes/verification_codes'
   register Sinatra::IBuyFoodApp::Routes::VerificationCodes
 
-  # Start the server if ruby file executed directly
+  # Start server if ruby file is executed directly
   run! if app_file == $0
 end

@@ -9,3 +9,8 @@ gem 'sinatra-activerecord', '~> 2.0', '>= 2.0.10'
 group :test, :development do
   gem 'dotenv', '~> 2.1', '>= 2.1.1'
 end
+
+group :test do
+  gem 'rspec'    , '~> 3.4'
+  gem 'rack-test', '~> 0.6.3'
+end
