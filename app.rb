@@ -16,6 +16,10 @@ class IBuyFoodApp < Sinatra::Base
   set :database_file, 'config/database.yml'
 
   # Application files
+  # Models
+  require './models/verification_code'
+
+  # Routes
   require './routes/verification_codes'
   register Sinatra::IBuyFoodApp::Routes::VerificationCodes
 
