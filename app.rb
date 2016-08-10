@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/namespace'
 require 'sinatra/activerecord'
 
 class IBuyFoodApp < Sinatra::Base
@@ -7,8 +8,7 @@ class IBuyFoodApp < Sinatra::Base
     # Load environment variables
     require 'dotenv'
     Dotenv.load
-    # Listen on all interfaces
-    set :bind, '0.0.0.0'
+    set :bind, '0.0.0.0' # Listen on all interfaces
   end
 
   # Load database configuration

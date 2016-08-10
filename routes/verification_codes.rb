@@ -5,8 +5,14 @@ module Sinatra
 
         def self.registered(app)
 
-          app.get '/' do
-            'Hello world!'
+          app.register Sinatra::Namespace
+
+          app.namespace '/api' do
+
+            get '/hello_world' do
+              'Hello world!'
+            end
+
           end
         end
       end
