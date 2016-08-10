@@ -1,7 +1,7 @@
 # Usage
   - Run ``bundle install`` to install all dependencies
   - Environment variables:
-    - Setup the application environment variables in the ``.env`` file
+    - Setup the application environment variables in the ``.env`` file (check ``.env.example`` for guidance)
   - Database setup:
 ``` bash
   bundle exec rake db:create
